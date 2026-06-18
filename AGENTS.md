@@ -1,24 +1,16 @@
 <claude-mem-context>
 # Memory Context
 
-# [VibeAnything] recent context, 2026-06-18 3:50pm GMT+8
+# [VibeAnything] recent context, 2026-06-18 3:55pm GMT+8
 
 Legend: 🎯session 🔴bugfix 🟣feature 🔄refactor ✅change 🔵discovery ⚖️decision 🚨security_alert 🔐security_note
 Format: ID TIME TYPE TITLE
 Fetch details: get_observations([IDs]) | Search: mem-search skill
 
-Stats: 50 obs (14,239t read) | 316,030t work | 95% savings
+Stats: 50 obs (14,057t read) | 339,285t work | 96% savings
 
 ### Jun 18, 2026
-802 3:04p 🔵 Article review cycle completed - fixes not yet applied
-803 " 🔴 All 4 review issues fixed in 01-什么是LLM.md via JS text manipulation
-805 " 🔵 Research phase started for next 基石篇 article on Chinese LLM ecosystem
-806 " 🔵 Researching LLM model landscape for "常见模型一览" update
-804 " 🟣 First tutorial article complete, reviewed, fixed, and committed
-807 3:07p 🔵 Inspected existing model comparison table in 01-什么是LLM.md
-808 3:08p ✅ Attempted to replace model table with open/closed source distinction and expanded model list
-809 " ✅ Updated 01-什么是LLM.md with open/closed source distinction and expanded model table
-810 " ✅ Verified all new content written correctly to 01-什么是LLM.md
+810 3:08p ✅ Verified all new content written correctly to 01-什么是LLM.md
 812 " ✅ Fixed fragile model names in Token文章02
 813 " 🔵 Article 02 code review revealed 4 numerical/plausibility issues
 811 " ✅ Committed model table update to git (commit d2cf5c8)
@@ -60,6 +52,14 @@ Stats: 50 obs (14,239t read) | 316,030t work | 95% savings
 849 " ⚖️ Review agent Descartes closed after completing article review
 850 " 🔵 Researched SiliconFlow as a Chinese AI API platform
 852 " 🔵 Queried SiliconFlow Chinese documentation for quickstart and API usage
+853 3:49p 🟣 Wrote "科学上网与API获取" article for environment setup section
+859 " 🔵 Review agent Curie found major issue: deprecated DeepSeek model name in article
+854 3:50p ✅ Article quality review requested for SiliconFlow setup guide
+856 3:51p 🔵 DeepSeek "deepseek-chat" model deprecated per official docs
+857 " 🔵 SiliconFlow registration details incomplete in article
+858 " 🔵 SiliconFlow API key generation page URL confirmed
+860 3:52p 🔴 Fixed all 5 review issues in 环境准备篇/01-科学上网与API获取.md
+861 " 🟣 Committed 环境准备篇/01-科学上网与API获取.md with all review fixes
 
-Access 316k tokens of past work via get_observations([IDs]) or mem-search skill.
+Access 339k tokens of past work via get_observations([IDs]) or mem-search skill.
 </claude-mem-context>
