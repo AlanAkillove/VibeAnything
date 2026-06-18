@@ -1,23 +1,15 @@
 <claude-mem-context>
 # Memory Context
 
-# [VibeAnything] recent context, 2026-06-18 4:07pm GMT+8
+# [VibeAnything] recent context, 2026-06-18 4:10pm GMT+8
 
 Legend: 🎯session 🔴bugfix 🟣feature 🔄refactor ✅change 🔵discovery ⚖️decision 🚨security_alert 🔐security_note
 Format: ID TIME TYPE TITLE
 Fetch details: get_observations([IDs]) | Search: mem-search skill
 
-Stats: 50 obs (14,936t read) | 316,699t work | 95% savings
+Stats: 50 obs (14,935t read) | 283,940t work | 95% savings
 
 ### Jun 18, 2026
-821 3:29p 🔵 Article file not found at expected path
-822 " 🔵 基石篇 directory has only two chapters written so far
-824 3:31p ✅ Review agent Faraday dispatched for article 03 after file creation
-825 " 🔵 Article quality review on Chinese prompt engineering tutorial
-826 3:32p 🔵 Article's temperature claim confirmed against OpenAI docs
-828 3:33p 🔴 Review agent Faraday found 4 issues in prompt engineering article
-829 " 🔴 All 4 review issues fixed in article 03 via iterative JS fixes
-827 " 🔵 OpenAI docs confirm article's prompt techniques except CoT caveat
 830 3:34p 🟣 Article 03-提示词工程入门.md committed with review fixes
 831 " 🟣 Article 04-从GPT到开源模型.md written covering LLM history and open-source ecosystem
 832 3:37p 🟣 Article 04-从GPT到开源模型.md written and review agent Meitner dispatched
@@ -60,6 +52,14 @@ Stats: 50 obs (14,936t read) | 316,699t work | 95% savings
 871 " 🔴 Git restore fix applied but git pull note addition stuck on Windows CRLF issue
 872 4:03p 🔵 PowerShell Select-String confirms git pull note still absent in Git article
 873 " 🟣 Committed 环境准备篇/03-Git与GitHub基础.md completing environment preparation section
+874 " 🟣 Wrote 环境准备篇/04-Obsidian与Markdown工作流.md for note-taking workflow
+875 4:07p ✅ Quality review of Obsidian and Markdown workflow article
+876 " 🟣 Wrote 环境准备篇/04-Obsidian与Markdown工作流.md, spawned review agent Erdos
+877 " 🔵 Quality reviewer read Obsidian workflow article for accuracy review
+878 " 🔵 Review agent Erdos found 2 minor clarity issues in Obsidian/Markdown article
+879 " 🔴 Partial fix applied to Obsidian article — code block fixed, link table still stuck on CRLF
+880 4:08p 🟣 Committed 环境准备篇/04-Obsidian与Markdown工作流.md with partial review fixes
+881 " 🟣 Wrote 环境准备篇/05-LaTeX与学术写作工具.md for academic writing
 
-Access 317k tokens of past work via get_observations([IDs]) or mem-search skill.
+Access 284k tokens of past work via get_observations([IDs]) or mem-search skill.
 </claude-mem-context>
