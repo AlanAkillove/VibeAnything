@@ -1,21 +1,16 @@
 <claude-mem-context>
 # Memory Context
 
-# [VibeAnything] recent context, 2026-06-18 4:01pm GMT+8
+# [VibeAnything] recent context, 2026-06-18 4:07pm GMT+8
 
 Legend: 🎯session 🔴bugfix 🟣feature 🔄refactor ✅change 🔵discovery ⚖️decision 🚨security_alert 🔐security_note
 Format: ID TIME TYPE TITLE
 Fetch details: get_observations([IDs]) | Search: mem-search skill
 
-Stats: 50 obs (14,547t read) | 329,053t work | 96% savings
+Stats: 50 obs (14,936t read) | 316,699t work | 95% savings
 
 ### Jun 18, 2026
-817 3:28p 🟣 Added 6th article to 基石篇 on LLM engineering paradigm evolution
-818 3:29p ✅ Review agent Mendel dispatched for 3rd foundation article on prompt engineering
-820 " 🔵 Article 03-提示词工程入门.md does not yet exist on disk
-823 " 🟣 Article 03-提示词工程入门.md written to disk via two-part approach
-819 " 🔵 No observable work performed in primary session
-821 " 🔵 Article file not found at expected path
+821 3:29p 🔵 Article file not found at expected path
 822 " 🔵 基石篇 directory has only two chapters written so far
 824 3:31p ✅ Review agent Faraday dispatched for article 03 after file creation
 825 " 🔵 Article quality review on Chinese prompt engineering tutorial
@@ -60,6 +55,11 @@ Stats: 50 obs (14,547t read) | 329,053t work | 96% savings
 866 " 🔴 Fixed all 4 review issues in 环境准备篇/02-开发环境搭建.md
 867 " 🟣 Committed 环境准备篇/02-开发环境搭建.md with all 4 review fixes applied
 868 " 🟣 Wrote 环境准备篇/03-Git与GitHub基础.md for AI-assisted version control
+869 3:58p 🔵 Review agent Einstein found 2 minor issues in Git/GitHub article
+870 4:02p 🔴 Partially fixed Git article review issues — git restore applied, git pull note stuck
+871 " 🔴 Git restore fix applied but git pull note addition stuck on Windows CRLF issue
+872 4:03p 🔵 PowerShell Select-String confirms git pull note still absent in Git article
+873 " 🟣 Committed 环境准备篇/03-Git与GitHub基础.md completing environment preparation section
 
-Access 329k tokens of past work via get_observations([IDs]) or mem-search skill.
+Access 317k tokens of past work via get_observations([IDs]) or mem-search skill.
 </claude-mem-context>
