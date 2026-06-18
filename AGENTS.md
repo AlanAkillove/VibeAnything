@@ -1,13 +1,13 @@
 <claude-mem-context>
 # Memory Context
 
-# [VibeAnything] recent context, 2026-06-18 2:44pm GMT+8
+# [VibeAnything] recent context, 2026-06-18 2:47pm GMT+8
 
 Legend: 🎯session 🔴bugfix 🟣feature 🔄refactor ✅change 🔵discovery ⚖️decision 🚨security_alert 🔐security_note
 Format: ID TIME TYPE TITLE
 Fetch details: get_observations([IDs]) | Search: mem-search skill
 
-Stats: 24 obs (7,972t read) | 194,799t work | 96% savings
+Stats: 28 obs (9,321t read) | 202,063t work | 95% savings
 
 ### Jun 18, 2026
 761 2:22p 🔵 Vibe coding tutorial project planned for lab juniors
@@ -33,7 +33,11 @@ Stats: 24 obs (7,972t read) | 194,799t work | 96% savings
 781 " ✅ Design spec fully rewritten to v2 incorporating all agent research findings
 782 " 🟣 VibeAnything tutorial design v2 reaches 15 modules with complete content architecture
 783 " ✅ Design spec v2 committed to git with agent research findings
+785 " ✅ 科研篇 massively expanded from 4 to 10 articles with two sub-modules
 784 " ✅ Design phase reaches completion milestone with plan update
+786 2:44p 🔴 科研篇 content accidentally deleted during file deduplication cleanup
+787 2:45p 🔴 科研篇 content recovered after accidental deletion during dedup cleanup
+788 " ✅ 科研篇 expansion committed to git as commit 097d499
 
-Access 195k tokens of past work via get_observations([IDs]) or mem-search skill.
+Access 202k tokens of past work via get_observations([IDs]) or mem-search skill.
 </claude-mem-context>
