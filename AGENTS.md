@@ -1,23 +1,16 @@
 <claude-mem-context>
 # Memory Context
 
-# [VibeAnything] recent context, 2026-06-18 3:31pm GMT+8
+# [VibeAnything] recent context, 2026-06-18 3:37pm GMT+8
 
 Legend: 🎯session 🔴bugfix 🟣feature 🔄refactor ✅change 🔵discovery ⚖️decision 🚨security_alert 🔐security_note
 Format: ID TIME TYPE TITLE
 Fetch details: get_observations([IDs]) | Search: mem-search skill
 
-Stats: 50 obs (15,969t read) | 274,279t work | 94% savings
+Stats: 50 obs (15,822t read) | 249,300t work | 94% savings
 
 ### Jun 18, 2026
-769 2:40p 🔵 VibeAnything tutorial design research initiated
-772 2:41p 🟣 Chinese AI education resource research initiated
-777 2:42p 🔵 Agent Dirac completed ML/DL educational resource analysis
-778 " 🔵 Agent Aristotle completed China-specific AI education landscape analysis
-779 " ⚖️ Three parallel research agents completed with comprehensive findings for design refinement
-780 2:43p ✅ Design spec deleted in preparation for rewrite
-781 " ✅ Design spec fully rewritten to v2 incorporating all agent research findings
-782 " 🟣 VibeAnything tutorial design v2 reaches 15 modules with complete content architecture
+781 2:43p ✅ Design spec fully rewritten to v2 incorporating all agent research findings
 783 " ✅ Design spec v2 committed to git with agent research findings
 785 " ✅ 科研篇 massively expanded from 4 to 10 articles with two sub-modules
 784 " ✅ Design phase reaches completion milestone with plan update
@@ -60,6 +53,13 @@ Stats: 50 obs (15,969t read) | 274,279t work | 94% savings
 821 " 🔵 Article file not found at expected path
 822 " 🔵 基石篇 directory has only two chapters written so far
 824 3:31p ✅ Review agent Faraday dispatched for article 03 after file creation
+825 " 🔵 Article quality review on Chinese prompt engineering tutorial
+826 3:32p 🔵 Article's temperature claim confirmed against OpenAI docs
+828 3:33p 🔴 Review agent Faraday found 4 issues in prompt engineering article
+829 " 🔴 All 4 review issues fixed in article 03 via iterative JS fixes
+827 " 🔵 OpenAI docs confirm article's prompt techniques except CoT caveat
+830 3:34p 🟣 Article 03-提示词工程入门.md committed with review fixes
+831 " 🟣 Article 04-从GPT到开源模型.md written covering LLM history and open-source ecosystem
 
-Access 274k tokens of past work via get_observations([IDs]) or mem-search skill.
+Access 249k tokens of past work via get_observations([IDs]) or mem-search skill.
 </claude-mem-context>
