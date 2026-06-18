@@ -93,16 +93,21 @@ Tokenizer（分词器）的工作分两步：
 
 ### 不同模型的上下文窗口大小
 
-| 模型 | 上下文窗口 |
-|------|-----------|
-| GPT-4o | 128K tokens |
-| Claude 最新 Sonnet | 200K tokens |
-| Gemini 2.5 Pro | 1M tokens |
-| DeepSeek 最新版 | 1M tokens |
-| Kimi 最新版 | 256K tokens |
-| Qwen 最新 Coder 版 | 128K tokens |
-| Llama 最新版 | 256K tokens |
-| GLM 最新版 | 128K tokens |
+| 模型（当前最新版本） | 开发者 | 原生上下文窗口 | 版本细分与补充说明 |
+|------|--------|-----------|------|
+| **GPT-5.5** | OpenAI | API版：1M tokens<br>ChatGPT Pro Thinking：400K tokens | 2026年4月发布旗舰推理模型；API标准接口支持100万token（922K输入+128K输出）；ChatGPT端Pro用户手动选Thinking模式为400K，默认Instant仅128K |
+| **Claude Fable 5**（最新旗舰） | Anthropic | 1M tokens | 2026年6月9日发布，Mythos级首次公开商用；定位高于Opus系列，SWE-bench编程榜单约95%准确率；最大输出128K tokens |
+| **Claude Opus 4.8** | Anthropic | 1M tokens | 2026年5月28日发布，主力高端推理模型；主打诚实性与长链路Agent任务，最大输出128K tokens |
+| **Gemini 3.1 Pro** | Google | 1,048,576 tokens（1M） | 2026年2月发布当前最新主力版本；原生支持约105万token图文混合上下文，企业付费版可扩容至2M；免费版维持1M上限 |
+| **DeepSeek V4**（Pro/Flash） | 深度求索 | 1M tokens | 2026年4月发布，全系MIT开源；Pro/Flash双版本统一标配百万上下文，最大输出384K tokens；KV缓存仅为V3的10% |
+| **Kimi K2.7** | 月之暗面 | 262,144 tokens（256K） | 通用版与Code专用版均为固定256K上下文；2026年6月发布K2.7 Code编程开源版，暂未推出百万上下文版本 |
+| **Qwen3.7-Max / Plus** | 阿里云 | 1M tokens | 2026年5月阿里云峰会发布；旗舰Max与主力Plus均原生支持百万级上下文；输出上限64K tokens |
+| **Qwen3.7-Coder（开源版）** | 阿里云 | 256K tokens | 开源代码专用版本，原生256K上下文；可通过外推技术扩展，但官方标称原生为256K |
+| **Llama 4 Scout** | Meta | 10M tokens | 2026年4月发布，开源权重；iRoPE外推技术支持千万级上下文，800万token内检索准确率95%+，为当前开源模型天花板 |
+| **Llama 4 Maverick** | Meta | 1M tokens | Llama 4推理旗舰版本，128专家MoE架构；原生100万token上下文，综合性能对标GPT-4o |
+| **GLM-5.2** | 智谱AI | 1M tokens | 2026年6月13日最新发布，MIT协议开源；IndexShare架构优化，1M上下文下FLOPs降低2.9倍，主打长程编程Agent |
+| **MiMo V2.5-Pro** | 小米 | 1M tokens | 2026年6月最新迭代，全系MIT开源；MoE架构，百万上下文专为长链路Agent优化，深度适配WPS办公生态 |
+| **Step 3.7 Flash** | 阶跃星辰 | 256K tokens | 2026年5月29日开源，主打极速推理；最高400+ TPS吞吐，原生多模态，为生产级Agent场景优化，暂未推出百万上下文版本 |
 
 128K Token ≈ 约 8 万汉字 ≈ 一本 200 页的书
 
