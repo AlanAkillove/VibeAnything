@@ -22,3 +22,8 @@ npm-debug.log*
 # OS
 .DS_Store
 Thumbs.db
+# Docs / design specs
+docs/
+
+# AI context (local only)
+AGENTS.md
