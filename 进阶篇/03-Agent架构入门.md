@@ -274,22 +274,20 @@ class Memory:
 
 ---
 
-## 进阶方向
-
-实现一个基础 Agent 只是开始。生产级的 Agent 需要考虑：
-
-- **错误处理与重试**：工具调用失败时 Agent 应该自动重试或用替代方案
-- **Human-in-the-loop**：关键操作（如发邮件、修改数据库）需要先询问用户确认
-- **任务拆解**：复杂问题先由 LLM 分解成子任务，sub-agent 各做各的，最后汇总
-- **并行工具调用**：同一轮可以同时调用多个无依赖的工具（OpenAI 原生支持）
-- **持续运行与观察**：Agent 可以在后台运行，定期检查条件是否满足并触发动作
-
 ---
 
 ## 要点总结
 
-- Agent = LLM（大脑）+ 工具（手）+ 记忆（上下文）+ 规划（策略）
-- 核心架构是一个 while 循环：LLM 输出 → 执行工具 → 结果放回 messages → LLM 再决策，直到输出最终回答
-- 用 OpenAI Function Calling + 一个简单的循环，不到 50 行代码就能跑通 Agent 核心逻辑
-- system prompt 中的规则约束直接影响 Agent 的决策质量（什么时候调工具、什么时候直接回答）
-- 错误处理、Human-in-the-loop、任务拆解是 Agent 进阶的关键方向
+1. Agent = LLM（大脑）+ 工具（手）+ 记忆（上下文）+ 规划（策略）
+2. 核心架构是一个 while 循环：LLM 输出 → 执行工具 → 结果放回 messages → LLM 再决策，直到输出最终回答
+3. 用 OpenAI Function Calling + 一个简单的循环，不到 50 行代码就能跑通 Agent 核心逻辑
+4. system prompt 中的规则约束直接影响 Agent 的决策质量（什么时候调工具、什么时候直接回答）
+5. 本文只是 Agent 的起点——模块化能力、多 Agent 协作、可靠性保障是下一步
+
+---
+
+## 更进一步
+
+- **Skills 与 MCP**：参考 [05-Agent Skills与工具协议](./05-Agent%20Skills与工具协议.md) — 把 Agent 的能力拆成模块化 Skills，用 MCP 标准连接工具
+- **多 Agent 协作**：参考 [06-多Agent协作与编排](./06-多Agent协作与编排.md) — Subagents、Agent Teams、四大编排模式
+- **Agent 可靠性**：参考 [07-Agent可靠性与可观测性](./07-Agent可靠性与可观测性.md) — Plan Mode、记忆架构、可观测性四信号
