@@ -82,12 +82,15 @@ print(f"切分成 {len(chunks)} 个片段，每个约 500 字符")
 ```python
 from openai import OpenAI
 
-client = OpenAI()
+client = OpenAI(
+    api_key="sk-你的API Key",
+    base_url="https://api.siliconflow.cn/v1"  # 国内直接用，无需特殊网络
+)
 
 def embed_texts(texts: list[str]) -> list[list[float]]:
-    """用 OpenAI Embedding 模型将文本转为向量。"""
+    """用 Embedding 模型将文本转为向量。"""
     response = client.embeddings.create(
-        model="text-embedding-3-small",  # 1536 维，性价比高
+        model="BAAI/bge-large-zh-v1.5",  # 国内可用: SiliconFlow 提供的 Embedding 模型，1024 维
         input=texts
     )
     return [data.embedding for data in response.data]
@@ -99,13 +102,9 @@ def embed_texts(texts: list[str]) -> list[list[float]]:
 
 ```python
 import chromadb
-from chromadb.config import Settings
 
-# 初始化 ChromaDB
-chroma_client = chromadb.Client(Settings(
-    chroma_db_impl="duckdb+parquet",
-    persist_directory="./knowledge_base"
-))
+# 初始化 ChromaDB（ChromaDB 0.5+ 新 API）
+chroma_client = chromadb.PersistentClient(path="./knowledge_base")
 
 # 创建或获取集合
 collection = chroma_client.get_or_create_collection(
@@ -162,7 +161,7 @@ def generate_answer(question: str, context_chunks: list[str]) -> str:
 回答："""
     
     response = client.chat.completions.create(
-        model="gpt-4o-mini",
+        model="deepseek-ai/DeepSeek-V4-Flash",  # 可换成任意 SiliconFlow 上的模型
         messages=[{"role": "user", "content": prompt}],
         temperature=0.3
     )
@@ -180,11 +179,11 @@ print(answer)
 ```python
 class SimpleRAG:
     def __init__(self, collection_name: str = "default"):
-        self.client = OpenAI()
-        self.chroma = chromadb.Client(Settings(
-            chroma_db_impl="duckdb+parquet",
-            persist_directory="./vector_db"
-        ))
+        self.client = OpenAI(
+            api_key="sk-你的API Key",
+            base_url="https://api.siliconflow.cn/v1"  # 国内直接用，无需特殊网络
+        )
+        self.chroma = chromadb.PersistentClient(path="./vector_db")
         self.collection = self.chroma.get_or_create_collection(
             name=collection_name
         )
@@ -210,8 +209,9 @@ class SimpleRAG:
         return chunks
     
     def _embed(self, texts: list[str]):
+        # 国内可用: SiliconFlow 的 BAAI/bge-large-zh-v1.5 等
         resp = self.client.embeddings.create(
-            model="text-embedding-3-small", input=texts
+            model="BAAI/bge-large-zh-v1.5", input=texts
         )
         return [d.embedding for d in resp.data]
     
@@ -224,7 +224,8 @@ class SimpleRAG:
         ctx = "\n\n".join(context)
         prompt = f"基于以下内容回答问题。不知道就说不知道：\n{ctx}\n\n问题：{question}"
         resp = self.client.chat.completions.create(
-            model="gpt-4o-mini", messages=[{"role": "user", "content": prompt}],
+            model="deepseek-ai/DeepSeek-V4-Flash",  # 可换成任意 SiliconFlow 上的模型
+            messages=[{"role": "user", "content": prompt}],
             temperature=0.3
         )
         return resp.choices[0].message.content

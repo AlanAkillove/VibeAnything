@@ -96,7 +96,7 @@ response = client.chat.completions.create(
 print(response.choices[0].message.content)
 ```
 
-如果使用 DeepSeek V4 / R1 这类推理模型，还可以在流式输出中获取模型的思考过程：
+如果使用 DeepSeek V4（支持 Think 推理模式）这类推理模型，还可以在流式输出中获取模型的思考过程：
 ```python
 response = client.chat.completions.create(
     model="deepseek-ai/DeepSeek-V4",
@@ -114,7 +114,7 @@ for chunk in response:
         print(delta.content, end="", flush=True)
 ```
 
-平台覆盖主流开源模型：DeepSeek V4/R1、Qwen3.7 全系列、GLM-5.2、Llama 4、Step 等上百款模型，可在「模型广场」查看完整列表和实时价格。
+平台覆盖主流开源模型：DeepSeek V4、Qwen3.7 全系列、GLM-5.2、Llama 4、Step 等上百款模型，可在「模型广场」查看完整列表和实时价格。
 
 ### 路径 B：DeepSeek 官方平台
 

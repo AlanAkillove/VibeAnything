@@ -7,12 +7,12 @@
 ## 1. 代码生成
 
 ### 差的 Prompt
-`
+````markdown
 写一个 Python 函数读取 CSV 文件
-`
+````
 
 ### 好的 Prompt
-`
+````markdown
 Task: 写一个 Python 函数读取 CSV 文件并返回格式化结果
 Language: Python 3.12+
 Requirements:
@@ -23,7 +23,7 @@ Requirements:
 - 异常处理：文件不存在、编码错误、空文件
 - 日志输出：打印文件行数和列名
 Output: 仅输出代码，不要额外解释
-`
+````
 
 ### 为什么好
 差的 Prompt 太模糊，模型不知道要什么编码、什么异常处理、什么输出格式。一个好的代码生成 prompt = 任务描述 + 语言版本 + 具体约束 + 输出格式。AI 生成的程序在第一次就能正确使用的概率大幅提升。
@@ -33,12 +33,12 @@ Output: 仅输出代码，不要额外解释
 ## 2. Code Review
 
 ### 差的 Prompt
-`
+````markdown
 帮我 review 这段代码
-`
+````
 
 ### 好的 Prompt
-`
+````markdown
 Code Review Request
 
 Context: 这是一个用户注册接口的后端 handler，运行在 FastAPI 上。
@@ -56,7 +56,7 @@ Review Format:
 - [Praise]: 做得好的地方
 
 Code:
-`python
+```python
 @app.post("/register")
 async def register(username: str, password: str):
     user = db.query(f"SELECT * FROM users WHERE username='{username}'")
@@ -64,8 +64,8 @@ async def register(username: str, password: str):
         return {"error": "user exists"}
     db.execute(f"INSERT INTO users VALUES ('{username}', '{password}')")
     return {"ok": True}
-`
-`
+````
+````markdown
 
 ### 为什么好
 差的 Prompt 没有给 model 任何 context，review 结果往往流于表面。好的 review prompt 包含了上下文、关注点、格式要求，输出的 review 更有针对性、更有结构、更可操作。
@@ -75,12 +75,12 @@ async def register(username: str, password: str):
 ## 3. Debugging
 
 ### 差的 Prompt
-`
+````
 我的代码报错了，帮我看看什么问题
-`
+````markdown
 
 ### 好的 Prompt
-`
+````
 Debug Request
 
 环境:
@@ -96,7 +96,7 @@ Traceback (most recent call last):
 openai.APIConnectionError: Connection error.
 
 相关代码:
-`python
+```python
 from openai import OpenAI
 
 client = OpenAI(
@@ -108,13 +108,13 @@ response = client.chat.completions.create(
     model="Qwen/Qwen3.7-72B-Instruct",
     messages=[{"role": "user", "content": "hello"}]
 )
-`
+```
 
 我已经尝试过:
 1. 确认 API Key 正确且在有效期内
 2. 网络可以正常访问 siliconflow.cn
 3. 重启了电脑
-`
+```
 
 ### 为什么好
 差的 Prompt 省略了关键的上下文信息（环境、错误堆栈、代码、已尝试的方法），AI 只能猜问题。好的 debug prompt = 运行环境 + 完整错误信息 + 相关代码 + 已尝试的排查步骤。AI 能排除你已经试过的方向，直接给出更深入的诊断。
@@ -124,12 +124,12 @@ response = client.chat.completions.create(
 ## 4. 学习辅助
 
 ### 差的 Prompt
-`
+```
 给我讲讲什么是 Transformer
-`
+```
 
 ### 好的 Prompt
-`
+```
 学习请求
 
 当前水平: 我了解基本 Python 编程和神经网络概念（知道什么是 forward pass、什么是 loss function），但从未读过 Transformer 论文
@@ -142,7 +142,7 @@ response = client.chat.completions.create(
 3. 解释 Attention 机制时，不要讲公式，用"每个词看所有其他词"的方式描述
 4. 最后用 3 句话总结核心概念
 5. 每段讲完问我"这部分清楚吗？"，如果有不明白的地方我会追问
-`
+```
 
 ### 为什么好
 差的 Prompt 让 AI 猜你的水平、猜你的目的，结果往往是两种极端——太浅或太深。好的学习 prompt = 明确当前水平 + 目标 + 讲解风格 + 交互机制。AI 能精确匹配你的理解水平，而不是用一个泛泛的回答打发你。
@@ -152,12 +152,12 @@ response = client.chat.completions.create(
 ## 5. 论文辅助
 
 ### 差的 Prompt
-`
+```
 帮我读一下这篇论文，总结一下
-`
+```
 
 ### 好的 Prompt
-`
+````markdown
 论文阅读辅助
 
 论文: [论文标题 / 粘贴 PDF 或 arXiv 链接]
@@ -175,7 +175,7 @@ response = client.chat.completions.create(
 5. 阅读建议: 如果想进一步深入，应该重点读哪几个 section？参考文献里哪几篇是必读的？
 
 优先回答 1-3，4-5 在回答完基础信息后再补充
-`
+````
 
 ### 为什么好
 差的 Prompt 得到的摘要太泛，看完等于没看。好的论文 prompt = 明确你的背景 + 要读的论文 + 具体想知道什么 + 关联你自己的项目。AI 能从「给你翻译论文」变成「帮你理解论文和你的关联」。
@@ -185,12 +185,12 @@ response = client.chat.completions.create(
 ## 6. 安全审查
 
 ### 差的 Prompt
-`
+````markdown
 检查这段代码安不安全
-`
+````
 
 ### 好的 Prompt
-`
+````markdown
 Security Review Request
 
 审查目标: 这段代码是否适合在生产环境中处理用户输入
@@ -203,12 +203,12 @@ Security Review Request
 5. 权限问题 —— 是否存在越权风险
 
 Code:
-`python
+```python
 @app.post("/chat")
 async def chat(user_input: str, session_id: str):
     prompt = f"You are a helpful assistant. User says: {user_input}"
     response = openai.chat.completions.create(
-        model="gpt-4o",
+        model="Qwen/Qwen3.7-72B-Instruct",  # 可换成任意 SiliconFlow 上的模型
         messages=[
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": prompt}
@@ -216,13 +216,13 @@ async def chat(user_input: str, session_id: str):
     )
     print(session_id)  # log
     return {"response": response.choices[0].message.content}
-`
+````
 
 Output 格式:
 - [Severity: Critical/High/Medium/Low]
 - Issue description + 代码行号
 - Fix suggestion
-`
+```
 
 ### 为什么好
 差的 Prompt 给 AI 太多猜测空间。好的安全审查 prompt = 明确审查维度 + 具体的代码 + 结构化的输出格式。AI 能系统地覆盖每个安全风险维度，而不是随机发现几个问题。

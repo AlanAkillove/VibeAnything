@@ -127,7 +127,7 @@ print(result)  # [{'label': 'POSITIVE', 'score': 0.98}]
 ```python
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-model_name = "Qwen/Qwen2.5-1.5B-Instruct"
+model_name = "Qwen/Qwen3.5-1.5B-Instruct"
 
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForCausalLM.from_pretrained(
@@ -165,7 +165,7 @@ print(model.config.id2label[pred])
 
 ```python
 model = AutoModelForCausalLM.from_pretrained(
-    "meta-llama/Llama-2-7b-chat-hf",
+    "meta-llama/Llama-4-Scout-17B-16E-Instruct",
     torch_dtype=torch.float16,    # 半精度节省显存
     device_map="auto",            # 自动分配到可用设备
     load_in_8bit=True,             # 8-bit 量化（显存不够时用）

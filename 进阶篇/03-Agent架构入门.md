@@ -22,7 +22,7 @@
 
 | 你以为的 | 实际的 |
 |---------|--------|
-| Agent = 更强的 LLM | Agent 是「LLM + 工具 + 记忆 + 规划」的系统架构。给 GPT-4o 加 Function Calling 只是个起点，真正的 Agent 需要管理状态、循环、决策 |
+| Agent = 更强的 LLM | Agent 是「LLM + 工具 + 记忆 + 规划」的系统架构。给 LLM 加 Function Calling 只是个起点，真正的 Agent 需要管理状态、循环、决策 |
 | Agent 就是自动化脚本 | 自动化脚本是固定流程，Agent 是动态决策。LLM 每隔一轮根据现状决定下一步做什么，可能完全不同 |
 | Agent 框架必须用 LangChain / CrewAI | LangChain 封装了很多便利功能，但从零手写一个简单 Agent 反而更有助于理解原理。30 行代码就可以跑通核心逻辑 |
 | Agent 能完全自主工作 | 目前最先进的 Agent 也需要设定边界、human-in-the-loop 检查和异常处理。完全自治的 Agent 仍是一个研究问题 |
@@ -97,7 +97,10 @@ Agent 决定「先做什么、再做什么」的能力。简单规划是 LLM 根
 from openai import OpenAI
 import json
 
-client = OpenAI()
+client = OpenAI(
+    api_key="sk-你的API Key",
+    base_url="https://api.siliconflow.cn/v1"  # 国内直接用，无需特殊网络
+)
 
 # ========== 1. 定义工具 ==========
 
@@ -171,7 +174,7 @@ def run_agent(user_input: str, max_iterations: int = 10) -> str:
     
     for iteration in range(max_iterations):
         response = client.chat.completions.create(
-            model="gpt-4o",
+            model="Qwen/Qwen3.7-72B-Instruct",  # 可换成任意 SiliconFlow 上的模型
             messages=messages,
             tools=tools,
             tool_choice="auto"
